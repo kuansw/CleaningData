@@ -4,15 +4,16 @@ The purpose of this script run_analysis.R is to to collect, load, clean and tran
 
 This assignment uses the “Human Activity Recognition Using Smartphones Data Set” from the <a href="http://archive.ics.uci.edu/ml/">UC Irvine Machine Learning Repository</a>, a popular repository for machine learning datasets, which contains data collected and processed from the experiments carried out with a group of 30 volunteers within an age bracket of 19-48 years, performing six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. 
 
-At each measurement window, 128 readings of the accelerometer and gyroscope signals are taken at 3 axis (X, Y, Z), and a vector of 561 features was obtained by processing and calculating variables from the time and frequency domain. See ‘README.txt’ and ’features_info.txt' provided in the dataset for more details. 
+At each sample window, 128 readings of the accelerometer and gyroscope signals are captured at 3 axes (X, Y, Z), and a vector of 561 features was obtained by processing and calculating variables from the time and frequency domain. See ‘README.txt’ and ’features_info.txt' provided in the dataset for more details. 
 
-In summary, each dataset record consists of the following 1715 columns:
-* 128 readings of acceleration from the accelerometer (total acceleration) x 3 axis
-* 128 readings of body acceleration (Estimated) x 3 axis
-* 128 readings of Angular velocity from the gyroscope x 3 axis
-* A 561-feature vector with time and frequency domain variables. 
-* Its activity label. 
+In summary, each record in the HAR dataset consists of the following 1715 columns:
 * An identifier of the subject who carried out the experiment.
+* An activity label. 
+* A 561-feature vector with time and frequency domain variables. 
+* 128 readings of acceleration from the accelerometer (total acceleration) x 3 axes
+* 128 readings of body acceleration (Estimated) x 3 axes
+* 128 readings of Angular velocity from the gyroscope x 3 axes
+
 
 A full description of this dataset is available at the site where the data was obtained: 
 	http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
@@ -43,7 +44,7 @@ run_analysis() is the main function that performs the following data collection,
 	   working directory
 
 
-load_HARdataset() is a helper function that is called by run_analysis() to load, cleanse and merge the 12 raw data files comprising each sub-dataset within this HAR dataset.  The data records for the sub-dataset is stored in a number of files under a directory with same name as the sub-dataset’s name and its subdirectories.   
+load_HARdataset() is a helper function that is called by run_analysis() to load, cleanse and merge the 12 data files comprising each dataset partition within this HAR dataset.  The data records for the dataset partition are stored in several space-separated files under a directory with same name as the dataset partition’s name and its subdirectories.   
 
 The list of files that makes up the HAR dataset is as follows:
  1. subject_<DSname>.txt   - this file stores the subjects who carried out 
@@ -61,7 +62,7 @@ The list of files that makes up the HAR dataset is as follows:
     - body_acc_z_<DSname>.txt
     - body_gyro_z_<Dsname>.txt
 
-    Each of these nine files records 128 measurements of the following signals in either X,Y or Z axis :
+    Each row of these nine files records 128 measurements of the following signals in either X,Y or Z axis :
     - the acceleration signals from the accelerometer (total acceleration)
     - the estimated body acceleration. 
     - Triaxial Angular velocity from the gyroscope. 
