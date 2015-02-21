@@ -45,25 +45,23 @@ run_analysis() is the main function that performs the following data collection,
 
 load_HARdataset() is a helper function that is called by run_analysis() to load, cleanse and merge the 12 raw data files comprising each sub-dataset within this HAR dataset.  The data records for the sub-dataset is stored in a number of files under a directory with same name as the sub-dataset’s name and its subdirectories.   
 
-The list of files that makes up the HAR dataset is as fo    llows:
+The list of files that makes up the HAR dataset is as follows:
  1. subject_<DSname>.txt   - this file stores the subjects who carried out 
                              the experiment
  2. Y_<DSname>.txt         - this file stores the activities performed. 
- 3. X_<DSname>.txt         - this file stores a 561-feature vector of
-                             time and frequency domain variables.
- 4. Nine files under the subdirectory "Inertial Signals", 
-    4.1 total_acc_x_<DSname>.txt
-    4.2 body_acc_x_<DSname>.txt
-    4.3 body_gyro_x_<Dsname>.txt
-    4.4 total_acc_y_<DSname>.txt
-    4.5 body_acc_y_<DSname>.txt
-    4.6 body_gyro_y_<Dsname>.txt
-    4.7 total_acc_z_<DSname>.txt
-    4.8 body_acc_z_<DSname>.txt
-    4.9 body_gyro_z_<Dsname>.txt
+ 3. X_<DSname>.txt         - this file stores a 561-feature vector of time and frequency domain variables.
+ 4. Nine files under the subdirectory "Inertial Signals"
+    - total_acc_x_<DSname>.txt
+    - body_acc_x_<DSname>.txt
+    - body_gyro_x_<Dsname>.txt
+    - total_acc_y_<DSname>.txt
+    - body_acc_y_<DSname>.txt
+    - body_gyro_y_<Dsname>.txt
+    - total_acc_z_<DSname>.txt
+    - body_acc_z_<DSname>.txt
+    - body_gyro_z_<Dsname>.txt
 
-    Each of these nine files records 128 measurements of the following 
-    signals in either X,Y or Z axis :
+    Each of these nine files records 128 measurements of the following signals in either X,Y or Z axis :
     - the acceleration signals from the accelerometer (total acceleration)
     - the estimated body acceleration. 
     - Triaxial Angular velocity from the gyroscope. 
@@ -150,6 +148,6 @@ Check the output file tidy.txt, which contains the average values of the 66 mean
 * fBodyBodyGyroJerkMag_mean
 * fBodyBodyGyroJerkMag_std
 
-Please refer to Codebook.md provided with this submission for descriptions of the data variables and transformations performed.
+Please refer to CodeBook.md provided with this submission for descriptions of the data variables and transformations performed.
 
 
