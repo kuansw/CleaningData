@@ -106,42 +106,42 @@ Each record contains 68 columns as follows :
 To make the names consistent for use as Column names, characters ‘(‘ and ‘)’ in the names are removed, and characters “-“ and “‘“ in the names are replaced by “_”.
 
 4. Load and merge the 12 files that make up the Training dataset partition
-The list of files loaded and merged are as follows :
-* train/subject_train.txt
-* train/X_train.txt
-* train/y_train.txt
-* train/Inertial Signals/body_acc_x_train.txt
-* train/Inertial Signals/body_acc_y_train.txt
-* train/Inertial Signals/body_acc_z_train.txt
-* train/Inertial Signals/body_gyro_x_train.txt
-* train/Inertial Signals/body_gyro_y_train.txt
-* train/Inertial Signals/body_gyro_z_train.txt
-* train/Inertial Signals/total_acc_x_train.txt
-* train/Inertial Signals/total_acc_y_train.txt
-* train/Inertial Signals/total_acc_z_train.txt
+   The list of files loaded and merged are as follows :
+	- train/subject_train.txt
+	- train/X_train.txt
+	- train/y_train.txt
+	- train/Inertial Signals/body_acc_x_train.txt
+	- train/Inertial Signals/body_acc_y_train.txt
+	- train/Inertial Signals/body_acc_z_train.txt
+	- train/Inertial Signals/body_gyro_x_train.txt
+	- train/Inertial Signals/body_gyro_y_train.txt
+	- train/Inertial Signals/body_gyro_z_train.txt
+	- train/Inertial Signals/total_acc_x_train.txt
+	- train/Inertial Signals/total_acc_y_train.txt
+	- train/Inertial Signals/total_acc_z_train.txt
 
-When loading features data (i.e. train/X_train.txt), the feature labels prepared in step 3 are used as Column Names.
-When loading the activities data (i.e. train/y_train.txt), the activity codes are replaced by their corresponding human-readable activity labels. 
-When loading the raw signals data, column Names for the raw signal measurements are prefixed by Signal Type (‘body_acc’, ‘body_gyro’, ‘total_acc’), Axis (x,y,z) and the reading sequence no (V1 to V128)
+   When loading features data (i.e. train/X_train.txt), the feature labels prepared in step 3 are used as Column Names.
+   When loading the activities data (i.e. train/y_train.txt), the activity codes are replaced by their corresponding human-readable activity labels. 
+   When loading the raw signals data, column Names for the raw signal measurements are prefixed by Signal Type (‘body_acc’, ‘body_gyro’, ‘total_acc’), Axis (x,y,z) and the reading sequence no (V1 to V128)
 
 5. Load and merge the 12 files that make up the Test dataset partition
-The list of files loaded and merged are as follows :
-* test/subject_test.txt
-* test/X_test.txt
-* test/y_test.txt
-* test/Inertial Signals/body_acc_x_test.txt
-* test/Inertial Signals/body_acc_y_test.txt
-* test/Inertial Signals/body_acc_z_test.txt
-* test/Inertial Signals/body_gyro_x_test.txt
-* test/Inertial Signals/body_gyro_y_test.txt
-* test/Inertial Signals/body_gyro_z_test.txt
-* test/Inertial Signals/total_acc_x_test.txt
-* test/Inertial Signals/total_acc_y_test.txt
-* test/Inertial Signals/total_acc_z_test.txt
+   The list of files loaded and merged are as follows :
+	- test/subject_test.txt
+	- test/X_test.txt
+	- test/y_test.txt
+	- test/Inertial Signals/body_acc_x_test.txt
+	- test/Inertial Signals/body_acc_y_test.txt
+	- test/Inertial Signals/body_acc_z_test.txt
+	- test/Inertial Signals/body_gyro_x_test.txt
+	- test/Inertial Signals/body_gyro_y_test.txt
+	- test/Inertial Signals/body_gyro_z_test.txt
+	- test/Inertial Signals/total_acc_x_test.txt
+	- test/Inertial Signals/total_acc_y_test.txt
+	- test/Inertial Signals/total_acc_z_test.txt
 
-When loading features data (i.e. test/X_test.txt), the feature labels prepared in step 3 are used as Column Names.
-When loading the activities data (i.e. test/y_test.txt), the activity codes are replaced by their corresponding human-readable activity labels. 
-When loading the raw signals data, column Names for the raw signal measurements are prefixed by Signal Type (‘body_acc’, ‘body_gyro’, ‘total_acc’), Axis (x,y,z) and the reading sequence no (V1 to V128)
+   When loading features data (i.e. test/X_test.txt), the feature labels prepared in step 3 are used as Column Names.
+   When loading the activities data (i.e. test/y_test.txt), the activity codes are replaced by their corresponding human-readable activity labels. 
+   When loading the raw signals data, column Names for the raw signal measurements are prefixed by Signal Type (‘body_acc’, ‘body_gyro’, ‘total_acc’), Axis (x,y,z) and the reading sequence no (V1 to V128)
 
 
 6. Merge the Training and Test dataset partitions loaded in Steps 2 and 3 into one full dataset with all 1715 columns (including the raw signals)
@@ -150,7 +150,7 @@ When loading the raw signals data, column Names for the raw signal measurements 
 
 
 8. From the intermediate dataset created in Step 7, calculate the average values of all 66 mean and standard by each activity and each subject and save the output to the final tidy dataset.
-The column names for the average values in the final tidy dataset are the same as that of the column names for their corresponding mean and standard deviation features in the full dataset.
+   The column names for the average values in the final tidy dataset are the same as that of the column names for their corresponding mean and standard deviation features in the full dataset.
 
 9. The final tidy dataset is then written out as a file ‘tidy.txt’ to the current working directory. 
 
