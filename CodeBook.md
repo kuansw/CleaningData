@@ -1,7 +1,7 @@
 ## Introduction
 This code book describes the data structure and variables of ‘tidy.txt’, which is the output file created by run_analysis.R script after cleansing, processing and summarising the “Human Activity Recognition Using Smartphones Data Set” from the <a href="http://archive.ics.uci.edu/ml/">UC Irvine Machine Learning Repository</a>.
 
-The Data Transformation Steps from the original dataset to output dataset are also described.
+The processing steps performed to transform the data from the original dataset to output tidy dataset are also described.
 
 ## Original Source Data Description 
 This section is an extract reproduced from README.txt of the original UCI HAR dataset.
@@ -21,14 +21,14 @@ The source data to be processed by this script was downloaded from this URL:
 	https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
 
-## Record Data Structure of the Output file ’tidy.txt’
-‘tidy.txt’, the output file of run_analysis.R, is a space-separated file, which contains the average values of the 66 mean and standard variables grouped by activity and subject, which were extracted from the original UCI HAR Dataset.
+## Output Data File ’tidy.txt’ Description
+‘tidy.txt’, the output file of run_analysis.R, is a space-separated file.  Each record contains the average values of the 66 mean and standard deviation features for each activity and subject pair, which were summarised from the data sample records in the UCI HAR Dataset corresponding to the same activity and subject pair.
 
-Each record contains 68 columns as follows :
-   
+Therefore, each row in ‘tidy.txt’ contains the following 68 columns:
+ 
 * activity 	- the activity performed for this window sample. The possible values are  ‘WALKING’, ‘WALKING_UPSTAIRS’,’WALKING_DOWNSTAIRS’,’SITTING’,’STANDING’,’LAYING’
 * subject 	- the subject who performed the activity. Its range is from 1 to 30.
-* tBodyAcc_mean_X
+* tBodyAcc_mean_X 
 * tBodyAcc_mean_Y
 * tBodyAcc_mean_Z
 * tBodyAcc_std_X
@@ -95,6 +95,7 @@ Each record contains 68 columns as follows :
 * fBodyBodyGyroJerkMag_mean
 * fBodyBodyGyroJerkMag_std
 
+As there are 6 activity types and 30 subjects, ‘tidy.txt’ contains 180 data rows in total.
 
 ## Data Collection and Transformation Steps
 
